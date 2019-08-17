@@ -40,3 +40,7 @@ button {
   font-family: Lato;
   margin-top: 20px;
 }
+
+.show-button {
+  width: 100%;
+}

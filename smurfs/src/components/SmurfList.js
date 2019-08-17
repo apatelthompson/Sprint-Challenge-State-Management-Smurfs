@@ -6,8 +6,12 @@ import { getSmurfData } from "../actions/smurfActions";
 
 const SmurfList = props => {
   console.log(props);
+  console.log(props.smurfs);
   return (
     <div className="smurf-list">
+      <button className="show-button" onClick={props.getSmurfData}>
+        Show Smurf Village
+      </button>
       {props.smurfs.map(indiv => (
         <Smurf
           key={indiv.id}
