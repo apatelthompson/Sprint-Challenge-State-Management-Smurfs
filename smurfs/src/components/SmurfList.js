@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import Smurf from "./Smurf";
 
-import { getSmurfData } from "../actions/smurfActions";
+import { getSmurfData } from "../actions";
 
 const SmurfList = props => {
   console.log(props);

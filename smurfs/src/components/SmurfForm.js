@@ -1,15 +1,26 @@
 import React from "react";
 import { connect } from "react-redux";
-import { postSmurfData } from "../actions/smurfActions";
+import { postSmurfData } from "../actions";
 
 const SmurfForm = props => {
+  console.log("props from SmurfForm", props);
   return (
     <form className="smurf-form">
-      <input type="text" name="name" placeholder="Name" />
+      <input
+        type="text"
+        name="name"
+        value={props.smurfName}
+        placeholder="Name"
+      />
 
-      <input type="text" name="age" placeholder="Age" />
+      <input type="number" name="age" value={props.age} placeholder="Age" />
 
-      <input type="text" name="height" placeholder="Height" />
+      <input
+        type="text"
+        name="height"
+        value={props.height}
+        placeholder="Height in cm"
+      />
 
       <button onClick={props.postSmurfData}>Submit</button>
     </form>
