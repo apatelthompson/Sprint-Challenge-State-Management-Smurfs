@@ -2,7 +2,7 @@ import React from "react";
 
 const SmurfForm = () => {
   return (
-    <form>
+    <form className="smurf-form">
       <input type="text" name="name" placeholder="Name" />
 
       <input type="text" name="age" placeholder="Age" />

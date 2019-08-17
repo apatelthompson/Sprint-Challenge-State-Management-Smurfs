@@ -9,12 +9,12 @@ export const getSmurfData = () => {
     dispatch({ type: FETCH_SMURF_DATA_START });
     axios
       .get("http://localhost:3333/smurfs")
-      .then(res => {
-        console.log(res);
-        dispatch({ type: FETCH_SMURF_DATA_SUCCESS, payload: res.data });
+      .then(response => {
+        console.log(response);
+        dispatch({ type: FETCH_SMURF_DATA_SUCCESS, payload: response.data });
       })
-      .catch(err => {
-        dispatch({ type: FETCH_SMURF_DATA_FAILURE, payload: err.response });
+      .catch(error => {
+        dispatch({ type: FETCH_SMURF_DATA_FAILURE, payload: error.response });
       });
   };
 };

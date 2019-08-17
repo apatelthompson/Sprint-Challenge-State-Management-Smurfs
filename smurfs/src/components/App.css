@@ -1,28 +1,42 @@
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Lato;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
+.smurf-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 40 40 40;
+  border-radius: 5px;
+  width: 40%;
   padding: 20px;
-  color: white;
+  background-color: #62cdfd;
+  -webkit-box-shadow: 3px 3px 5px 6px #ccc; /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+  -moz-box-shadow: 3px 3px 5px 6px #ccc; /* Firefox 3.5 - 3.6 */
+  box-shadow: 3px 3px 5px 6px #ccc; /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
 }
 
-.App-title {
-  font-size: 1.5em;
+input {
+  line-height: 1.5rem;
+  margin: 10px;
+  border-radius: 5px;
+  width: 60%;
+  font-family: Lato;
+  text-align: center;
+  font-size: 1rem;
 }
 
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+button {
+  width: 30%;
+  height: 40px;
+  border-radius: 5px;
+  background-color: white;
+  color: #62cdfd;
+  font-size: 1.2rem;
+  font-family: Lato;
+  margin-top: 20px;
 }
