@@ -1,40 +1,60 @@
-import React from "react";
+import React, { useState } from "react";
 import { connect } from "react-redux";
 import { postSmurfData } from "../actions";
 
 const SmurfForm = props => {
   console.log("props from SmurfForm", props);
+
+  const [smurf, setSmurf] = useState({
+    name: "",
+    age: "",
+    height: "",
+    id: Date.now()
+  });
+
+  const handleChange = event => {
+    setSmurf({ ...smurf, [event.target.name]: event.target.value });
+  };
+
+  const handleSubmit = event => {
+    event.preventDefault();
+    props.postSmurfData(smurf);
+  };
+
   return (
     <form className="smurf-form">
       <input
         type="text"
         name="name"
-        value={props.smurfName}
+        value={smurf.name}
+        onChange={handleChange}
         placeholder="Name"
       />
 
-      <input type="number" name="age" value={props.age} placeholder="Age" />
+      <input
+        type="number"
+        name="age"
+        value={smurf.age}
+        placeholder="Age"
+        onChange={handleChange}
+      />
 
       <input
         type="text"
         name="height"
-        value={props.height}
+        value={smurf.height}
+        onChange={handleChange}
         placeholder="Height in cm"
       />
 
-      <button onClick={props.postSmurfData}>Submit</button>
+      <button type="submit" onClick={handleSubmit}>
+        Submit
+      </button>
     </form>
   );
 };
 
-const mapStateToProps = state => {
-  return {
-    name: state.smurfName,
-    age: state.age,
-    height: state.height
-  };
-};
 export default connect(
-  mapStateToProps,
+  null,
   { postSmurfData }
 )(SmurfForm);
